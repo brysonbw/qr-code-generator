@@ -1,9 +1,9 @@
 import React from 'react';
-import Logo from '../../components/Logo';
+import Logo from '../../assets/logo/Logo';
 
 function Home() {
   return (
-    <main>
+    <main className="mt-auto">
       <Logo className="w-40 h-40 mx-auto" />
       <h1 className="text-3xl font-bold text-center">QR Code Generator</h1>
 
