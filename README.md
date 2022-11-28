@@ -1,7 +1,8 @@
 # QR Code Generator
-- React
 - Vite
+- React
 - Typescript
+- Tailwind CSS
 
 ## Usage
 ```bash
@@ -19,6 +20,15 @@ $ yarn
 $ yarn run dev
 
 Open http://localhost:3000 to view it in the browser.
+```
+
+## Linting
+```bash
+# check for linting errors
+$ yarn lint
+
+# fix linting errors
+$ yarn fix-lint
 ```
 
 ## Building
