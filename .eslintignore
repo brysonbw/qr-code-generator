@@ -6,4 +6,5 @@ dist-ssr
 node_modules/*
 .eslintrc.cjs
 .prettier.cjs
+tailwind.config.cjs
 vite.config.ts
