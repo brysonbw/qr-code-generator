@@ -1,8 +1,14 @@
 import './index.css';
+import { Routes, Route } from 'react-router-dom';
+import PageNotFound from './pages/pagenotfound/PageNotFound';
+import Home from './pages/home/Home';
 
 function App() {
   return (
-    <h1 className="text-3xl font-bold text-center pt-96">QR Code Generator</h1>
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="*" element={<PageNotFound />} />
+    </Routes>
   );
 }
 
