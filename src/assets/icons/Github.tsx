@@ -1,14 +1,12 @@
 import React from 'react';
 
-function Github() {
+type Props = {
+  className: string;
+};
+
+function Github({ className }: Props) {
   return (
-    <svg
-      viewBox="0 0 24 24"
-      aria-hidden="true"
-      className="w-5 h-5 fill-white mx-auto mb-2
-      transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300
-      "
-    >
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className}>
       <path
         fillRule="evenodd"
         clipRule="evenodd"
