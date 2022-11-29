@@ -4,4 +4,4 @@ dist
 dist-ssr
 *.local
 node_modules/*
-.prettier.cjs
+.prettierrc.cjs
