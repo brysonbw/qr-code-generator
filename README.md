@@ -1,13 +1,7 @@
 <div align="center">
   <img height="230x"  src="https://res.cloudinary.com/ddlhtsgmp/image/upload/w_1000,c_fill,ar_1:1,g_auto,r_max/qr_code_generator_logo.png" />
 
-  <h1>QR Code Generator</h1>
-
-  <p>
-    <strong>A free simple QR Code Generator.</strong>
-  </p>
-  
-  
+  <h1>QR Code Generator</h1> 
 
   <p>
      <a href="https://github.com/brysonbw/qr-code-generator"><img alt="prs-welcome" src="https://img.shields.io/badge/PRs-welcome-black.svg?style=flat" /></a>
