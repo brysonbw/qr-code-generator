@@ -30,10 +30,10 @@ function Home() {
   }
 
   return (
-    <main className="mt-auto">
+    <div className="mt-auto">
       <div className="gap-16 items-center py-8 px-4 mx-auto max-w-screen-xl lg:grid lg:grid-cols-2 lg:py-16 lg:px-6">
         {/** //! Left Side Hero */}
-        <div className="mx-auto text-center">
+        <section className="mx-auto text-center">
           {!showQRCode ? (
             /* <Logo className="w-40 h-40 mx-auto" /> */
             // TODO: Cleanup URL onSubmit(), input state, & clearForm() Logic
@@ -83,13 +83,13 @@ function Home() {
               </button>
             </div>
           )}
-        </div>
+        </section>
         {/** //! Right Side Hero */}
         {
           // TODO: successful onSubmit() == QR Code Renders */
           // TODO: cleanup 'showQRCode' state and conditionally render logic
         }
-        <div
+        <section
           className={
             showQRCode
               ? 'rounded-md mt-8 border-2'
@@ -103,9 +103,9 @@ function Home() {
               <div>Your QR Code will appear here</div>
             </div>
           )}
-        </div>
+        </section>
       </div>
-    </main>
+    </div>
   );
 }
 

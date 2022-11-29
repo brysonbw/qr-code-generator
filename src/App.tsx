@@ -7,7 +7,7 @@ import Footer from './components/Footer';
 
 function App() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen">
+    <main className="flex flex-col items-center justify-center min-h-screen">
       {/** Navbar */}
       <Navbar />
       <Routes>
@@ -18,7 +18,7 @@ function App() {
       </Routes>
       {/** Footer */}
       <Footer />
-    </div>
+    </main>
   );
 }
 
