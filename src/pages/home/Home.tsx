@@ -49,19 +49,16 @@ function Home() {
                 <button
                   onClick={clearForm}
                   type="button"
-                  className="absolute inset-y-0 right-0 flex items-center pr-3"
+                  className="absolute inset-y-0 right-0 flex items-center lg:pr-3 pr-8"
                 >
                   {url !== '' && <XMarkIcon className="x-5 h-5 text-black" />}
                 </button>
               </div>
               <button
                 type="submit"
-                className="group relative h-12 w-56 overflow-hidden rounded-lg bg-white text-lg shadow mb-4"
+                className="group relative h-12 w-56 font-[500] rounded-lg text-black bg-white text-lg shadow mb-4"
               >
-                <div className="absolute inset-0 w-3 bg-blue-400 transition-all duration-[250ms] ease-out group-hover:w-full" />
-                <span className="relative text-black group-hover:text-white font-[500]">
-                  Generate QR Code
-                </span>
+                Generate QR Code
               </button>
             </form>
           ) : (
