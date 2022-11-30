@@ -2,7 +2,7 @@
 /* eslint-disable no-alert */
 import { XMarkIcon } from '@heroicons/react/24/outline';
 import React, { useState } from 'react';
-import Logo from '../../assets/logo/Logo';
+import { QRCodeCanvas } from 'qrcode.react';
 
 function Home() {
   const [url, setUrl] = useState<string>('');
@@ -28,6 +28,16 @@ function Home() {
       setUrl('');
     }
   }
+
+  const qrcode = (
+    <QRCodeCanvas
+      id="qrCode"
+      size={275}
+      value={url}
+      className="rounded-md mt-8 border-2 w-[17rem] h-[17rem]"
+      level="H"
+    />
+  );
 
   return (
     <div className="mt-auto">
@@ -83,18 +93,17 @@ function Home() {
         </section>
         {/** //! Right Side Hero */}
         {
-          // TODO: successful onSubmit() == QR Code Renders */
           // TODO: cleanup 'showQRCode' state and conditionally render logic
         }
         <section
           className={
             showQRCode
-              ? 'rounded-md mt-8 border-2'
+              ? ''
               : 'border-2 border-blue-400  border-dashed rounded-md mt-8'
           }
         >
           {showQRCode ? (
-            <Logo className="w-[17rem] h-[17rem]" />
+            <div>{qrcode}</div>
           ) : (
             <div className="w-[17rem] h-[17rem] justify-center items-center justify-items-center flex">
               <div>Your QR Code will appear here</div>
