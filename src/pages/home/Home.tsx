@@ -1,6 +1,7 @@
 import { QRCodeCanvas } from 'qrcode.react';
 import React, { useRef, useState } from 'react';
 import Logo from '../../assets/logo/Logo';
+import formSchema from '../../utils/formSchema';
 
 function Home() {
   const [url, setUrl] = useState<string>('');
@@ -8,15 +9,22 @@ function Home() {
 
   function downloadQRCode(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    const canvas = qrCodeRef.current?.querySelector('canvas');
-    const image = canvas?.toDataURL('image/png');
-    const anchor = document.createElement('a');
-    anchor.href = image as string;
-    anchor.download = `qr-code.png`;
-    document.body.appendChild(anchor);
-    anchor.click();
-    document.body.removeChild(anchor);
-    setUrl('');
+    const urlValid = formSchema.safeParse({
+      url,
+    });
+    if (!urlValid.success) {
+      alert('Invalid URL');
+    } else {
+      const canvas = qrCodeRef.current?.querySelector('canvas');
+      const image = canvas?.toDataURL('image/png');
+      const anchor = document.createElement('a');
+      anchor.href = image as string;
+      anchor.download = `qr-code.png`;
+      document.body.appendChild(anchor);
+      anchor.click();
+      document.body.removeChild(anchor);
+      setUrl('');
+    }
   }
 
   const qrcode = (
@@ -24,7 +32,7 @@ function Home() {
       id="qrCode"
       size={275}
       value={url}
-      className="rounded-md mt-8 border-2 w-[17rem] h-[17rem]"
+      className="rounded-md mt-8 w-[17rem] h-[17rem]"
       level="H"
     />
   );
@@ -40,13 +48,15 @@ function Home() {
               <input
                 value={url}
                 onChange={(event) => setUrl(event.target.value)}
-                className="rounded-lg pl-2 w-56 h-8 text-black"
+                className="rounded-lg pl-2 w-64 h-8 text-black shadow appearance-none border-2 focus:outline-none focus:shadow-outline focus:border-blue-400"
                 placeholder="Enter URL"
               />
             </div>
+
             <button
+              disabled={!url.length}
               type="submit"
-              className="group relative h-12 w-56 font-[500] rounded-lg text-black bg-white text-lg shadow mb-4"
+              className="group relative h-12 w-64 font-[500] rounded-lg text-black bg-white text-lg shadow mb-4 disabled:opacity-20 disabled:cursor-not-allowed"
             >
               Download
             </button>
